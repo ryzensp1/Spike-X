@@ -181,7 +181,7 @@ def get_readable_message():
             smsg += f"\n<b> <a>━━━━━━━━━━━━━━━━━━━</a> </b>"
             smsg += "\n\n"
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
-            msg += f"<b>{escape(str(download.name()))}</b>"
+            msg += f"<b> <u>{escape(str(download.name()))}</u> </b>"
             msg += "\n"
             msg += f"<b>┌ <a href='{download.message.link}'>{download.status()}</a>: </b>"
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_SPLITTING]:
@@ -256,7 +256,7 @@ def get_readable_message():
                 else:
                     msg += f"\n<b>├ Engine :</b> {download.eng()}"
                     msg += f"\n<b>└ Size: </b>{download.size()}"
-            msg += f"\n<b>━━━━━━━━━━━━━━━━━━━━━━━━━━━</b>"
+            msg += f"\n<b>━━━━━━━━━━━━━━━━━━━━━━━━━</b>"
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
