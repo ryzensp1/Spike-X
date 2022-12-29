@@ -179,6 +179,7 @@ def get_readable_message():
         if STATUS_LIMIT is not None:
             smsg = f"\n<b> <a> ☲    CRIMZ X CLOUD ☁️     ☲ </a> </b>"
             smsg += f"\n<b> <a>━━━━━━━━━━━━━━━━━━━</a> </b>"
+            smsg += "\n\n"
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
             msg += f"<b>╭ <a href='{download.message.link}'>{download.status()}</a>: </b>"
             msg += f"<code>{escape(str(download.name()))}</code>"
