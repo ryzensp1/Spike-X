@@ -181,7 +181,7 @@ def get_readable_message():
             smsg += f"\n<b> <a>━━━━━━━━━━━━━━━━━━━</a> </b>"
             smsg += "\n\n"
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
-            msg += f"<b>╭ <a href='{download.message.link}'>{download.status()}</a>: </b>"
+            msg += f"<b>┌ <a href='{download.message.link}'>{download.status()}</a>: </b>"
             msg += f"<code>{escape(str(download.name()))}</code>"
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_SPLITTING]:
                 if EMOJI_THEME is True:
@@ -227,7 +227,7 @@ def get_readable_message():
                         msg += f"\n<b>╰❌ </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
                     else:
                         msg += f'\n<b>├ User:</b> ️<code>{download.message.from_user.first_name}</code> | <b>Id:</b> <code>{download.message.from_user.id}</code>'
-                        msg += f"\n<b>╰ </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                        msg += f"\n<b>└ </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
 
             elif download.status() == MirrorStatus.STATUS_SEEDING:
                 if EMOJI_THEME is True:
@@ -247,14 +247,14 @@ def get_readable_message():
                     msg += f"\n<b>├ Ratio: </b>{download.ratio()}"
                     msg += f" | <b> Time: </b>{download.seeding_time()}"
                     msg += f"\n<b>├ Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
-                    msg += f"\n<b>╰ </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                    msg += f"\n<b>└ </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             else:
                 if EMOJI_THEME is True:
                     msg += f"\n<b>├⛓️ Engine :</b> {download.eng()}"
                     msg += f"\n<b>╰📐 Size: </b>{download.size()}"
                 else:
                     msg += f"\n<b>├ Engine :</b> {download.eng()}"
-                    msg += f"\n<b>╰ Size: </b>{download.size()}"
+                    msg += f"\n<b>└ Size: </b>{download.size()}"
             msg += f"\n<b>_____________________________________</b>"
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
