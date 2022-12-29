@@ -41,8 +41,8 @@ class MirrorStatus:
         STATUS_CHECKING = "📝 CheckUp"
         STATUS_SEEDING = "🌧 Seed"
     else:
-        STATUS_UPLOADING = "Upload"
-        STATUS_DOWNLOADING = "Download"
+        STATUS_UPLOADING = "𝕌𝕡𝕝𝕠𝕒𝕕"
+        STATUS_DOWNLOADING = "𝔻𝕠𝕨𝕟𝕝𝕠𝕒𝕕"
         STATUS_CLONING = "Clone"
         STATUS_WAITING = "Queue"
         STATUS_PAUSED = "Pause"
@@ -176,6 +176,9 @@ def get_readable_message():
             if PAGE_NO > PAGES and PAGES != 0:
                 globals()['COUNT'] -= STATUS_LIMIT
                 globals()['PAGE_NO'] -= 1
+        if EMOJI_THEME is True:
+            smsg = f"\n<b> <a> ☲    CRIMZ X CLOUD ☁️     ☲ </a> </b>"
+            smsg += f"\n<b> <a>━━━━━━━━━━━━━━━━━━━</a> </b>"
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
             msg += f"<b>╭ <a href='{download.message.link}'>{download.status()}</a>: </b>"
             msg += f"<code>{escape(str(download.name()))}</code>"
