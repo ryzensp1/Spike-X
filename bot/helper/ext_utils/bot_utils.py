@@ -182,7 +182,7 @@ def get_readable_message():
             smsg += "\n\n"
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
             msg += f"<b>{escape(str(download.name()))}</b>"
-            smsg += "\n"
+            msg += "\n"
             msg += f"<b>┌ <a href='{download.message.link}'>{download.status()}</a>: </b>"
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_SPLITTING]:
                 if EMOJI_THEME is True:
