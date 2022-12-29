@@ -351,17 +351,18 @@ class MirrorLeechListener:
             if EMOJI_THEME is True:
                 msg = f"<b>🗂️ Name: </b><{NAME_FONT}>{file_}</{NAME_FONT}>\n"
             else:
-                msg = f"<b>Name: </b><{NAME_FONT}>{file_}</{NAME_FONT}>\n"
+                msg = f"<b>⮕Name• </b><{NAME_FONT}>{file_}</{NAME_FONT}>\n"
             botpm = f"<b>\nHey {self.tag}!, I have sent your stuff in PM.</b>\n"
             buttons = ButtonMaker()
             b_uname = bot.get_me().username
             botstart = f"http://t.me/{b_uname}"
             buttons.buildbutton("View links in PM", f"{botstart}")
+            buttons.buildbutton("Logs Channel", f"https://t.me/+xpdLuh5h5jRiNWY1")
 
             if PICS:
-                sendPhoto(msg + botpm, self.bot, self.message, choice(PICS), buttons.build_menu(2))
+                sendPhoto(msg + botpm, self.bot, self.message, choice(PICS), buttons.build_menu(1))
             else:
-                sendMarkup(msg + botpm, self.bot, self.message, buttons.build_menu(2))
+                sendMarkup(msg + botpm, self.bot, self.message, buttons.build_menu(1))
             try:
                 self.message.delete()
             except Exception as e:
