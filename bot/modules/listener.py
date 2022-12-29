@@ -351,7 +351,7 @@ class MirrorLeechListener:
             if EMOJI_THEME is True:
                 msg = f"<b>🗂️ Name: </b><{NAME_FONT}>{file_}</{NAME_FONT}>\n"
             else:
-                msg = f"<b>⮕Name• </b><{NAME_FONT}>{file_}</{NAME_FONT}>\n"
+                msg = f"<b>⮕Name • </b><{NAME_FONT}>{file_}</{NAME_FONT}>\n"
             botpm = f"<b>\nHey {self.tag}!, I have sent your stuff in PM.</b>\n"
             buttons = ButtonMaker()
             b_uname = bot.get_me().username
